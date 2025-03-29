@@ -42,7 +42,7 @@ if ingredients_list:
         try:
             smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
         except:
-            smoothiefroot_response = None
+            smoothiefroot_response = {}
         sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     my_insert_stmt = """ INSERT INTO SMOOTHIES.PUBLIC.ORDERS(ingredients, name_on_order)
